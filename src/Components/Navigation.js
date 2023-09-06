@@ -1,11 +1,8 @@
 import React from "react";
 import "./Navigation.css";
-import { Link, Route, Routes } from "react-router-dom";
-import Signin from "../Pages/Signin/Signin";
-import Cart from "../Pages/Cart/Cart";
+import { Link } from "react-router-dom";
+
 import Undernav from "./Undernav";
-import Home from "../Pages/Home/Home";
-import Footer from "./Footer";
 
 export default function Navigation() {
   return (
@@ -21,12 +18,6 @@ export default function Navigation() {
         </div>
       </nav>
       <Undernav />
-
-      <Routes>
-        <Route path="/" element={<><Home /><Footer /></>}></Route>
-        <Route path="/signin" element={<Signin />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-      </Routes>
     </>
   );
 }
