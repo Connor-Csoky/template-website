@@ -22,8 +22,8 @@ export default function Navigation() {
       <Undernav />
 
       <Routes>
-        <Route path="https://connor-csoky.github.io/template-website/" element={<><Home /><Footer /></>}></Route>
-        <Route path="https://connor-csoky.github.io/template-website/signin" element={<Signin />}></Route>
+        <Route path="/" element={<><Home /><Footer /></>}></Route>
+        <Route path="/signin" element={<Signin />}></Route>
       </Routes>
     </>
   );
