@@ -10,7 +10,7 @@ export default function Navigation() {
       <nav className="navigation">
         <Link to="/" className="profile-photo">Cool Stuff</Link>
         <div className="searchbar-wrapper">
-          <input type="search" className="searchbar" />
+          <input type="search" placeholder="Search for items" className="searchbar" />
         </div>
         <div className="nav-right">
           <Link to="/signin">Sign In</Link>

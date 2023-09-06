@@ -1,11 +1,19 @@
-.navigation {
+.navigation, .form-nav {
   display: flex;
   align-items: center;
-  padding: 1rem;
   justify-content: space-between;
   border-bottom: 1px solid black;
   gap: 1rem;
 }
+
+.navigation {
+  padding: 1rem;
+}
+
+.form-nav {
+  padding: 1.6rem;
+}
+
 
 .searchbar-wrapper {
   width: 70%;
