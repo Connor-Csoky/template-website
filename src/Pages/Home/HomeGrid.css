@@ -1,0 +1,11 @@
+.home-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
+}
+
+.home-grid-wrapper div {
+  height: 300px;
+  width: 100%;
+  border: 1px solid green;
+}
