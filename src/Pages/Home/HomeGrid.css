@@ -1,11 +1,35 @@
 .home-grid-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   justify-items: center;
 }
 
-.home-grid-wrapper div {
-  height: 300px;
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 270px;
   width: 100%;
-  border: 1px solid green;
+}
+
+.product-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-image {
+  object-fit: cover;
+  width: 300px;
+  height: 90%;
+}
+
+.product-description {
+  display: flex;
+  height: 20%;
+  flex-direction: column;
+  justify-content: center;
+  padding: .1rem 1rem;
 }

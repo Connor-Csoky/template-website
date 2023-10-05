@@ -1,10 +1,33 @@
-import React from "react";
+import {React, useEffect} from "react";
 import "./Navigation.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Undernav from "./Undernav";
 
 export default function Navigation() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("token");
+    if (loggedInUser) {
+      fetch("http://localhost:3000", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        auth: JSON.parse(loggedInUser)
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.authenticate === false){
+        localStorage.clear();
+        navigate("/signin");
+      }
+    })
+    }
+  }, []);
+
   return (
     <>
       <nav className="navigation">

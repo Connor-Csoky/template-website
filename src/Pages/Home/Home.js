@@ -12,6 +12,5 @@ export default function Home() {
         <HomeGrid />
       </div>
     </main>
-  )
+  );
 }
-
