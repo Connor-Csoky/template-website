@@ -19,16 +19,18 @@ export default function App() {
   }
 
   return (
-    <div>
       <Routes>
-        <Route path="/" element={ <><Navigation search={onSearchChange} /><Home search={search}/></>}></Route>
+        {/* WITH NAVBAR */}
+        <Route path='/' element={<Navigation />}>
+          <Route index element={<Home />}/>
+          <Route path='/cart' element={<Cart />}/>
+          <Route path='/product/:name' element={<ProductPage/>}/>
+        </Route>
+        {/* WITHOUT NAVBAR */}
         <Route path="/signin" element={ <><FormNav /><Signin/></> }></Route>
         <Route path="/Register" element={ <><FormNav /><Register /></> }></Route>
-        <Route path="/cart" element={ <><Navigation/><Cart /></> }></Route>
-        <Route path="/product/:name" element={ <><Navigation/><ProductPage /></> }></Route>
       </Routes>
-    </div>
-  );
+  )
 }
 
 
