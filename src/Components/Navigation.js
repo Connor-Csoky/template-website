@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Undernav from "./Undernav";
 
-export default function Navigation() {
+export default function Navigation({search}) {
 
   const navigate = useNavigate();
 
@@ -26,14 +26,14 @@ export default function Navigation() {
       }
     })
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <>
       <nav className="navigation">
         <Link to="/" className="profile-photo">Cool Stuff</Link>
         <div className="searchbar-wrapper">
-          <input type="search" placeholder="Search for items" className="searchbar" />
+          <input type="search" onChange={search} placeholder="Search for items" className="searchbar" />
         </div>
         <div className="nav-right">
           <Link to="/signin">Sign In</Link>

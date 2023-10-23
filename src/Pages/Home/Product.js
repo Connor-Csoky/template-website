@@ -1,29 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
-export default function Product({id, path, name, price}) {
+export default function Product({ id, path, name, price }) {
   const navigate = useNavigate();
 
-  const test = (test, id) => (() => {
-    // fetch(`http://localhost:3000/product/${test}`, {
-    //   method: "post",
-    //   headers: { "Content-Type": "application/json" },
-    // })
-    navigate(`/product/${test}`);
-  });
+  const redirect = (name, id) => () => {
+    navigate(`/product/${name}`);
+  };
 
-  return(
-    <div onClick={test(name, id)} className="product-wrapper">
+  return (
+    <div onClick={redirect(name, id)} className="product-wrapper">
       <div className="product-image-div">
         <img className="product-image" src={path} alt="product" />
       </div>
-      <div className="product-description" >
-          <p>{name}</p>
-          <p>${price}</p>
+      <div className="product-description">
+        <p>{name}</p>
+        <p>${price}</p>
       </div>
     </div>
-  )
-  
+  );
 }
