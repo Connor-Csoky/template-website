@@ -1,6 +1,6 @@
 import {React, useEffect} from "react";
 import "./Navigation.css";
-import { Link, useNavigate } from "react-router-dom";
+import {Link, Outlet, useNavigate} from "react-router-dom";
 
 import Undernav from "./Undernav";
 
@@ -41,6 +41,7 @@ export default function Navigation({search}) {
         </div>
       </nav>
       <Undernav />
+      <Outlet />
     </>
   );
 }
